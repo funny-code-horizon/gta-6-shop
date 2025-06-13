@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Home page -->
+    <url>
+        <loc>https://www.gta6shop.us/</loc>
+    </url>
+    <!-- Category pages -->
+    <url>
+        <loc>https://www.gta6shop.us/accessories</loc>
+    </url>
+    <url>
+        <loc>https://www.gta6shop.us/games</loc>
+    </url>
+    <url>
+        <loc>https://www.gta6shop.us/hardware</loc>
+    </url>
+    <url>
+        <loc>https://www.gta6shop.us/merchandise</loc>
+    </url>
+</urlset>
