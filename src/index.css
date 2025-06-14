@@ -38,13 +38,27 @@
   body {
     @apply bg-gta-darker text-foreground antialiased;
     font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+    font-display: swap;
     background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239b87f5' fill-opacity='0.05'%3E%3Cpath d='M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c0 5.523-4.477 10-10 10S0 25.523 0 20s4.477-10 10-10zm10 8c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm40 40c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Optimize image loading */
+  img {
+    content-visibility: auto;
+  }
+
+  /* Critical resource hints */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 }
 
 @layer utilities {
   .gta-card {
     @apply bg-gta-dark border border-gta-accent/20 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gta-accent/20 hover:-translate-y-1;
+    contain: layout style paint;
   }
 
   .neon-border {
@@ -64,5 +78,14 @@
 
   .btn-gta {
     @apply bg-gta-accent text-white font-bold py-2 px-6 rounded-md transition-all duration-300 hover:bg-gta-highlight hover:shadow-lg hover:shadow-gta-highlight/30;
+    will-change: transform;
+  }
+
+  /* Performance optimizations */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

@@ -14,15 +14,25 @@ const HeroSection = () => {
     <section className="relative h-[90vh] w-full overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-gta-darker/40 via-gta-dark/60 to-gta-darker z-10"></div>
       
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1500673922987-e212871fec22')] bg-cover bg-center"></div>
+      <div className="absolute inset-0">
+        <img 
+          src="https://images.unsplash.com/photo-1500673922987-e212871fec22" 
+          alt="Gaming setup background"
+          className="w-full h-full object-cover"
+          width="1920"
+          height="1080"
+          loading="eager"
+          fetchPriority="high"
+        />
+      </div>
       
       <div className="relative z-20 max-w-7xl mx-auto h-full flex flex-col items-center justify-center px-4 text-center">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in text-white">
           Welcome to <span className="text-glow text-gta-accent">GTA 6</span> Shop
         </h1>
-        <p className="text-xl md:text-2xl text-white/90 max-w-3xl mb-8 animate-fade-in" style={{animationDelay: '0.2s'}}>
+        <h2 className="text-xl md:text-2xl text-white/90 max-w-3xl mb-8 animate-fade-in font-medium" style={{animationDelay: '0.2s'}}>
           The ultimate destination for gaming gear and accessories
-        </p>
+        </h2>
         
         <div className="animate-fade-in" style={{animationDelay: '0.5s'}}>
           <button className="btn-gta" onClick={scrollToProducts}>

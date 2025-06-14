@@ -69,9 +69,12 @@ const ProductGrid: React.FC<ProductGridProps> = ({
     };
   }, [loading, hasMore, loadMoreProducts]);
 
+  // Use h2 for category pages since h1 is in hero, h3 for homepage since h2 is used in hero
+  const HeadingTag = category ? 'h2' : 'h3';
+
   return (
     <section id="product-grid" className="py-16 px-4 md:px-10 max-w-7xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold mb-2 text-white">{title}</h2>
+      <HeadingTag className="text-3xl md:text-4xl font-bold mb-2 text-white">{title}</HeadingTag>
       <p className="text-white/70 mb-8">{description}</p>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -93,12 +96,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-gta-accent"></div>
         </div>
       )}
-      
-      {/* {!hasMore && products.length > 0 && (
-        <div className="text-center mt-10">
-          <p className="text-white/70">You've reached the end of the products</p>
-        </div>
-      )} */}
     </section>
   );
 };
